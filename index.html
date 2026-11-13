@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Diálogo 04 – Restaurante, Cafeteria, Compras e Supermercado (104 Frases)</title>
+    
+    <!-- Fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- RESET E BASE --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            background-color: #f0f2f5;
+            color: #333;
+            -webkit-font-smoothing: antialiased;
+            padding: 20px 10px;
+        }
+
+        /* --- CONTAINER PRINCIPAL --- */
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        /* --- TIPOGRAFIA --- */
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            font-size: 1.9rem;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #d35400;
+            line-height: 1.3;
+        }
+        
+        h2 { 
+            color: #a04000; 
+            margin-top: 35px; 
+            margin-bottom: 15px; 
+            font-size: 1.4rem; 
+            border-bottom: 2px solid #fbeee6; 
+            padding-bottom: 8px;
+            page-break-after: avoid;
+        }
+
+        p { font-size: 1rem; margin-bottom: 10px; color: #444; }
+        .emoji-large { font-size: 1.4rem; }
+
+        /* --- BARRA DE BOTÕES SUPERIOR E INFERIOR (MENU + PDF) --- */
+        .top-actions {
+            display: flex;
+            gap: 12px;
+            margin: 10px 0 25px 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            flex: 1;
+            min-width: 220px;
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            padding: 14px 18px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.25s ease, transform 0.1s;
+        }
+        .nav-btn:hover { background-color: #2c3e50; }
+        .nav-btn:active { transform: scale(0.99); }
+
+        .pdf-btn {
+            flex: 1;
+            min-width: 220px;
+            background-color: #c0392b;
+            color: white;
+            text-align: center;
+            padding: 14px 18px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.25s ease, transform 0.1s;
+            box-shadow: 0 3px 10px rgba(192, 57, 43, 0.25);
+        }
+        .pdf-btn:hover { background-color: #a93226; }
+        .pdf-btn:active { transform: scale(0.99); }
+
+        /* --- INTRODUÇÃO E CONTROLES --- */
+        .theme-intro {
+            background-color: #fef5e7;
+            border-left: 5px solid #d35400;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            page-break-inside: avoid;
+        }
+
+        .stats-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: space-between;
+            align-items: center;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 14px 18px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .speaker-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.88rem;
+        }
+
+        .pill-br { background-color: #e8f8f5; color: #0e6251; border: 1px solid #a3e4d7; }
+        .pill-us { background-color: #fef5e7; color: #a04000; border: 1px solid #f5b041; }
+
+        /* --- BARRA DE PESQUISA --- */
+        .search-box { margin: 20px 0; }
+        .search-input {
+            width: 100%;
+            padding: 12px 16px;
+            font-size: 1rem;
+            border: 2px solid #dcdde1;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.2s;
+        }
+        .search-input:focus {
+            outline: none;
+            border-color: #d35400;
+        }
+
+        /* --- CABEÇALHOS DOS ATOS E ÁUDIO --- */
+        .act-header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 35px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #fbeee6;
+        }
+
+        .act-title {
+            color: #a04000;
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .play-act-btn {
+            background-color: #d35400;
+            color: white;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .play-act-btn:hover { background-color: #a04000; }
+        .play-act-btn.stop { background-color: #e74c3c; }
+
+        .audio-btn-inline {
+            background: #eef6fc;
+            border: 1px solid #cce3f6;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.05rem;
+            width: 34px;
+            height: 34px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            vertical-align: middle;
+            margin-left: 8px;
+            transition: transform 0.1s, background-color 0.2s;
+        }
+        .audio-btn-inline:hover { background: #d35400; color: #fff; }
+        .audio-btn-inline:active { transform: scale(0.9); }
+
+        /* --- TABELAS DE DIÁLOGO --- */
+        .table-responsive-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin-bottom: 28px;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 680px;
+        }
+
+        th {
+            background-color: #2c3e50;
+            color: white;
+            padding: 12px 14px;
+            font-size: 0.9rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 14px;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+            font-size: 0.95rem;
+        }
+
+        tr.row-br { background-color: #fafffd; border-left: 4px solid #16a085; }
+        tr.row-us { background-color: #fffdf9; border-left: 4px solid #d35400; }
+        tr:hover { background-color: #fef9e7; }
+
+        .speaker-tag {
+            display: inline-block;
+            font-size: 0.76rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 12px;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+
+        .speaker-br { background-color: #d1f2eb; color: #0e6251; }
+        .speaker-us { background-color: #fdebd0; color: #935116; }
+
+        .turn-num {
+            font-weight: 800;
+            color: #7f8c8d;
+            font-size: 0.8rem;
+            margin-right: 5px;
+        }
+
+        .sentence-en {
+            font-weight: 600;
+            color: #1e293b;
+            font-size: 1.03rem;
+            display: inline;
+        }
+
+        .sentence-en b {
+            color: #c0392b;
+            background-color: #fdedec;
+            padding: 0 4px;
+            border-radius: 3px;
+        }
+
+        .ipa-symbol {
+            font-family: 'Roboto Mono', monospace;
+            background-color: #f1f1f1;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #c0392b;
+            font-size: 0.84rem;
+            display: inline-block;
+            margin-bottom: 4px;
+        }
+        
+        .character-portuguese-phonetics {
+            display: block;
+            color: #27ae60;
+            font-style: italic;
+            font-weight: 600;
+            font-size: 0.87rem;
+            margin-bottom: 5px;
+        }
+
+        .details-translation {
+            display: block;
+            color: #222;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-top: 4px;
+        }
+
+        .teacher-tip {
+            display: block;
+            margin-top: 7px;
+            padding-top: 6px;
+            border-top: 1px dashed #cbd5e1;
+            color: #475569;
+            font-size: 0.84rem;
+        }
+
+        .teacher-tip strong { color: #a04000; }
+
+        /* --- RESPONSIVIDADE MOBILE --- */
+        @media (max-width: 720px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.45rem; }
+            table { min-width: 100%; }
+            .dialogue-table thead { display: none; }
+            .dialogue-table tr {
+                display: block;
+                border-bottom: 2px solid #e0e0e0;
+                padding: 10px 0;
+            }
+            .dialogue-table td {
+                display: block;
+                width: 100%;
+                border: none;
+                padding: 6px 12px;
+            }
+        }
+
+        /* --- IMPRESSÃO A4 EM PDF --- */
+        @media print {
+            body { background-color: #fff; padding: 0; font-size: 9.5pt; }
+            .container { box-shadow: none; max-width: 100%; padding: 0; }
+            .top-actions, .audio-btn-inline, .play-act-btn, .search-box { display: none !important; }
+            tr, .theme-intro { page-break-inside: avoid; }
+            * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- BARRA DE BOTÕES NO TOPO: MENU PRINCIPAL + SALVAR COMO PDF -->
+        <div class="top-actions">
+            <button class="nav-btn" onclick="window.location.href='https://espaco-liberdade.github.io/inglesipa/'">⬅ Voltar ao Menu Principal</button>
+            <button class="pdf-btn" onclick="window.print()">🖨️ Salvar como PDF (A4)</button>
+        </div>
+
+        <h1>Diálogo 04 – Restaurante, Cafeteria, Compras e Supermercado<br><span style="font-size: 0.72em; color: #a04000;">Situações Práticas de Consumo no Dia a Dia (104 Frases do Básico ao Avançado)</span> <span class="emoji-large">🍽️🛍️🛒</span></h1>
+
+        <div class="theme-intro">
+            <p><strong>Peça Comida, Faça Compras e Vá ao Supermercado Sem Travar!</strong></p>
+            <p>Nesta aula prática, você vai acompanhar <strong>Pedro (um brasileiro passando uma temporada nos Estados Unidos)</strong> interagindo com <strong>Megan (barista de cafeteria, garçonete de restaurante, vendedora de loja de roupas e atendente de supermercado)</strong>.</p>
+            <p>A conversa evolui em <strong>5 Atos (do Básico ao Avançado)</strong>: desde pedir um café personalizado pela manhã (<em>for here or to go</em>), escolher pratos, ponto da carne (<em>medium-rare</em>) e acompanhamentos no restaurante, pedir caixinhas para viagem (<em>to-go boxes</em>) e calcular a gorjeta, até experimentar roupas no provador (<em>fitting room</em>), trocar peças e fazer compras completas no supermercado americano!</p>
+        </div>
+
+        <div class="stats-bar">
+            <div>
+                <span class="speaker-pill pill-br">🇧🇷 Pedro (Cliente Brasileiro): 52 Falas</span>
+                <span class="speaker-pill pill-us">🇺🇸 Megan (Cafeteria / Restaurante / Loja): 52 Falas</span>
+            </div>
+            <div style="font-size: 0.9rem; color: #555; font-weight: 600;">
+                🎧 Total: <strong>104 Frases com Áudio, IPA, Fonética, Tradução e Dicas do Professor</strong>
+            </div>
+        </div>
+
+        <!-- BARRA DE PESQUISA -->
+        <div class="search-box">
+            <input type="text" id="dialogueSearch" class="search-input" placeholder="🔍 Pesquisar nas 104 frases (ex: coffee, steak, medium-rare, check, tip, fitting room, refund, aisle, self-checkout)..." onkeyup="filterDialogue()">
+        </div>
+
+        <!-- CONTAINER DOS 5 ATOS DO DIÁLOGO (104 FALAS) -->
+        <div id="dialogue-container"></div>
+
+        <!-- BARRA DE BOTÕES NO RODAPÉ: MENU PRINCIPAL + SALVAR COMO PDF -->
+        <div class="top-actions" style="margin-top: 30px;">
+            <button class="nav-btn" onclick="window.location.href='https://espaco-liberdade.github.io/inglesipa/'">⬅ Voltar ao Menu Principal</button>
+            <button class="pdf-btn" onclick="window.print()">🖨️ Salvar como PDF (A4)</button>
+        </div>
+    </div>
+
+    <script>
+        // ============================================================================
+        // BASE COMPLETA: 104 FALAS (52 DO BRASILEIRO PEDRO + 52 DA ATENDENTE MEGAN)
+        // ímpares = BR (Pedro) | pares = US (Megan)
+        // ============================================================================
+        const dialogueActs = [
+            {
+                actId: 1,
+                title: "Ato 1: Na Cafeteria e Padaria – Fazendo Pedidos Rápidos (Nível Básico – Falas #1 a #20)",
+                items: [
+                    [1, "BR", "Good morning! How is it going today?", "/ɡʊd ˈmɔːrnɪŋ | haʊ ɪz ɪt ˈɡoʊɪŋ təˈdeɪ/", "(Gúd mór-nin! Ráu iz it gôu-in tu-dêi?)", "Bom dia! Como vão as coisas hoje?", "<strong>Saudação Simpática:</strong> Nos EUA, cumprimentar o atendente com <em>'How is it going?'</em> cria uma conexão imediata."],
+                    [2, "US", "Good morning! I'm doing well, thanks! What can I <b>get</b> for you today?", "/ɡʊd ˈmɔːrnɪŋ | aɪm ˈduːɪŋ wel θæŋks | wʌt kæn aɪ ɡet fɔːr juː təˈdeɪ/", "(Gúd mór-nin! Aim dú-in uél, thénks! Uót quén ai guét fór iu tu-dêi?)", "Bom dia! Estou bem, obrigada! O que posso pegar/trazer para você hoje?", "<strong>A Frase #1 das Cafeterias:</strong> Todo atendente pergunta <em>'What can I get for you?'</em> (O que posso trazer para você?)."],
+                    [3, "BR", "<b>I'll take</b> a medium latte and a blueberry muffin, please.", "/aɪl teɪk ə ˈmiːdiəm ˈlɑːteɪ ænd ə ˈbluːberi ˈmʌfɪn pliːz/", "(Áil têic a míi-di-am lá-tei énd a blú-bé-ri mâ-fin, plíiz)", "Eu vou querer um café com leite médio e um muffin de mirtilo, por favor.", "<strong>Fazendo Pedidos:</strong> Nunca diga <em>'I want'</em> (soa rude). Use <strong>I'll take...</strong>, <strong>I'll have...</strong> ou <strong>Can I get...?</strong>"],
+                    [4, "US", "Sure! Would you like your latte <b>hot or iced</b>?", "/ʃʊr | wʊd juː laɪk jɔːr ˈlɑːteɪ hɑːt ɔːr aɪst/", "(Xúr! Uúd iu láic iór lá-tei rót ór áist?)", "Claro! Você gostaria do seu latte quente ou gelado (com gelo)?", "<strong>Pergunta Clássica:</strong> Nos EUA, as pessoas tomam café com gelo (<em>iced coffee / iced latte</em>) o ano inteiro!"],
+                    [5, "BR", "Hot, please. It's a bit chilly outside this morning.", "/hɑːt pliːz | ɪts ə bɪt ˈtʃɪli ˌaʊtˈsaɪd ðɪs ˈmɔːrnɪŋ/", "(Rót, plíiz. Its a bít tchí-li áut-sáid dhis mór-nin)", "Quente, por favor. Está um pouco friozinho lá fora esta manhã.", "<strong>Vocabulário de Clima:</strong> <em>'Chilly'</em> significa aquele friozinho fresco de manhã (menos intenso que <em>freezing</em>)."],
+                    [6, "US", "What kind of milk would you like? We have whole, skim, almond, or oat milk.", "/wʌt kaɪnd əv mɪlk wʊd juː laɪk | wiː hæv hoʊl skɪm ˈɑːmənd ɔːr oʊt mɪlk/", "(Uót cáind óv mílc uúd iu láic? Uí rév rôul, skím, á-mând ór ôut mílc)", "Qual tipo de leite você gostaria? Temos integral, desnatado, de amêndoas ou de aveia.", "<strong>🚨 Pronúncia de 'ALMOND':</strong> Na palavra <strong>almond</strong> (amêndoa), a letra <strong>L é muda</strong>! Pronuncie <strong>/ˈɑːmənd/ ('á-mând')</strong>!"],
+                    [7, "BR", "Regular <b>whole milk</b> is fine for me, thank you.", "/ˈreɡjələr hoʊl mɪlk ɪz faɪn fɔːr miː θæŋk juː/", "(Ré-guiu-lar rôul mílc iz fáin fór mi, thénk iu)", "Leite integral normal está ótimo para mim, obrigado.", "<strong>Tipos de Leite:</strong> <em>Whole milk</em> = leite integral; <em>skim milk</em> = leite desnatado; <em>oat milk</em> = leite de aveia."],
+                    [8, "US", "Would you like me to <b>warm up</b> your blueberry muffin?", "/wʊd juː laɪk miː tə wɔːrm ʌp jɔːr ˈbluːberi ˈmʌfɪn/", "(Uúd iu láic mi tu uórm âp iór blú-bé-ri mâ-fin?)", "Você gostaria que eu esquentasse (amornasse) o seu muffin de mirtilo?", "<strong>Phrasal Verb Culinário:</strong> <em>'Warm up'</em> (ou <em>heat up</em>) = esquentar/amornar um lanche ou comida."],
+                    [9, "BR", "Yes, please! Warmed up tastes much better. Can I also get a bagel with cream cheese?", "/jes pliːz | wɔːrmd ʌp teɪsts mʌtʃ ˈbetər | kæn aɪ ˈɔːlsoʊ ɡet ə ˈbeɪɡl wɪθ kriːm tʃiːz/", "(Iés, plíiz! Uórmd âp têists mâtch bé-ter. Quén ai óu-sôu guét a bêi-gôl uídh críim tchíiz?)", "Sim, por favor! Quentinho fica muito mais gostoso. Posso pegar também um bagel com cream cheese?", "<strong>Can I get:</strong> Uma das formas mais naturais do inglês falado para pedir algo no balcão (<em>Can I get a...?</em>)."],
+                    [10, "US", "Of course! Would you like your bagel <b>toasted</b>?", "/əv kɔːrs | wʊd juː laɪk jɔːr ˈbeɪɡl ˈtoʊstɪd/", "(Óv córs! Uúd iu láic iór bêi-gôl tôus-ted?)", "Claro! Você gostaria do seu bagel tostado (na torradeira)?", "<strong>Estrutura:</strong> <em>'Would you like + objeto + particípio?'</em> (Gostaria dele tostado?)."],
+                    [11, "BR", "Yes, lightly toasted, please. And a bottle of <b>still water</b>.", "/jes ˈlaɪtli ˈtoʊstɪd pliːz | ænd ə ˈbɑːtl əv stɪl ˈwɔːtər/", "(Iés, láit-li tôus-ted, plíiz. Énd a bó-rôl óv stíl uó-rer)", "Sim, levemente tostado, por favor. E uma garrafa de água sem gás.", "<strong>Água com ou sem gás:</strong> Água sem gás é <strong>still water</strong> (ou <em>regular water</em>); água com gás é <strong>sparkling water</strong>!"],
+                    [12, "US", "Got it! Will that be <b>for here or to go</b>?", "/ɡɑːt ɪt | wɪl ðæt biː fɔːr hɪr ɔːr tə ɡoʊ/", "(Gót it! Uíl dhét bí fór ríher ór tu gôu?)", "Anotado! Vai ser para comer aqui ou para viagem?", "<strong>Pergunta Obrigatória nos EUA:</strong> Nos EUA dizem <strong>For here or to go?</strong> (No Reino Unido dizem <em>Eat in or takeaway?</em>)."],
+                    [13, "BR", "<b>To go</b>, please. I'm taking breakfast back to my family.", "/tə ɡoʊ pliːz | aɪm ˈteɪkɪŋ ˈbrekfəst bæk tə maɪ ˈfæməli/", "(Tu gôu, plíiz. Aim têi-quin bréc-fast béc tu mai fé-mi-li)", "Para viagem, por favor. Estou levando o café da manhã de volta para a minha família.", "<strong>Veja o TAKE + BACK:</strong> Levar de volta ao ponto de origem (hotel/casa)."],
+                    [14, "US", "Can I get a name for the order?", "/kæn aɪ ɡet ə neɪm fɔːr ði ˈɔːrdər/", "(Quén ai guét a nêim fór dhi ór-der?)", "Posso anotar um nome para o pedido (para chamar no copo)?", "<strong>Costume Americano:</strong> Eles escrevem seu nome no copo e chamam no balcão de retirada."],
+                    [15, "BR", "It's Pedro — spelled P-E-D-R-O.", "/ɪts ˈpeɪdroʊ | speld piː iː diː ɑːr oʊ/", "(Its Pêi-drou — spéld Píi - Íi - Díi - Ár - Ôu)", "É Pedro — soletrado P-E-D-R-O.", "<strong>Dica Prática:</strong> Soletrar nomes brasileiros logo de cara economiza tempo para o atendente!"],
+                    [16, "US", "Awesome! Your total comes to $14.50. How would you like to pay?", "/ˈɔːsəm | jɔːr ˈtoʊtl kʌmz tə ˌfɔːrˈtiːn ˈfɪfti | haʊ wʊd juː laɪk tə peɪ/", "(Ó-sâm! Iór tôu-rôl câmz tu fór-tíin fíf-ti. Ráu uúd iu láic tu pêi?)", "Ótimo! O seu total deu US$ 14,50. Como você gostaria de pagar?", "<strong>Expressão de Caixa:</strong> <em>'Your total comes to...'</em> (ou <em>That'll be...</em>) = O total deu tanto."],
+                    [17, "BR", "Can I <b>tap to pay</b> with my credit card or phone?", "/kæn aɪ tæp tə peɪ wɪθ maɪ ˈkredɪt kɑːrd ɔːr foʊn/", "(Quén ai tép tu pêi uídh mai cré-dit cárd ór fôun?)", "Posso pagar por aproximação com meu cartão de crédito ou celular?", "<strong>Inglês Moderno:</strong> Pagar por aproximação em inglês chama-se <strong>tap to pay</strong> (ou <em>contactless payment</em>)."],
+                    [18, "US", "Yes! Just tap your card right on the screen when it lights up.", "/jes | dʒʌst tæp jɔːr kɑːrd raɪt ɑːn ðə skriːn wen ɪt laɪts ʌp/", "(Iés! Djâst tép iór cárd ráit ón dhu scríin uén it láits âp)", "Sim! Basta encostar (aproximar) seu cartão bem na tela quando ela acender.", "<strong>Phrasal Verb:</strong> <em>'Light up'</em> = acender / iluminar-se."],
+                    [19, "BR", "Done! Where can I grab some <b>napkins</b> and a straw?", "/dʌn | wer kæn aɪ ɡræb sʌm ˈnæpkɪnz ænd ə strɔː/", "(Dân! Uér quén ai gréb sâm nép-quinz énd a stró?)", "Pronto! Onde posso pegar alguns guardanapos e um canudo?", "<strong>🚨 Falso Cognato Perigoso:</strong> Guardanapo em inglês é <strong>napkin</strong>! Nunca diga <em>folder</em> (pasta) nem <em>collar</em> (colarinho)!"],
+                    [20, "US", "Napkins, straws, and sweeteners are at the counter to your left. We'll call your name shortly!", "/ˈnæpkɪnz strɔːz ænd ˈswiːtnərz ɑːr æt ðə ˈkaʊntər tə jɔːr left | wiːl kɔːl jɔːr neɪm ˈʃɔːrtli/", "(Nép-quinz, stróz énd suíit-ners ar ét dhu cáun-ter tu iór léft. Uíil cól iór nêim xórt-li!)", "Guardanapos, canudos e adoçantes ficam no balcão à sua esquerda. Chamaremos seu nome em instantes!", "<strong>Falso Amigo 'Shortly':</strong> <em>'Shortly'</em> não significa 'curtamente'; significa <strong>'em breve / daqui a pouquinho'</strong>!"]
+                ]
+            },
+            {
+                actId: 2,
+                title: "Ato 2: No Restaurante – Mesa, Entradas, Ponto da Carne e Acompanhamentos (Nível Básico-Intermediário – Falas #21 a #42)",
+                items: [
+                    [21, "BR", "Hello! We'd like a <b>table for four</b>, please.", "/həˈloʊ | wiːd laɪk ə ˈteɪbl fɔːr fɔːr pliːz/", "(Ra-lôu! Uíid láic a têi-bôl fór fór, plíiz)", "Olá! Nós gostaríamos de uma mesa para quatro pessoas, por favor.", "<strong>Chegando ao Restaurante:</strong> Diga sempre <em>'A table for [número], please'</em> (ou <em>'Party of four'</em>)."],
+                    [22, "US", "Welcome! Would you prefer to sit <b>indoors</b> or outside on the patio?", "/ˈwelkəm | wʊd juː prɪˈfɜːr tə sɪt ˌɪnˈdɔːrz ɔːr ˌaʊtˈsaɪd ɑːn ðə ˈpætioʊ/", "(Uél-câm! Uúd iu pri-fâr tu sít in-dórz ór áut-sáid ón dhu pé-ri-ôu?)", "Bem-vindos! Vocês preferem sentar na área interna ou lá fora na varanda/terraço?", "<strong>Vocabulário:</strong> <em>'Indoors / Inside'</em> = área interna climatizada; <em>'On the patio'</em> = área externa/varanda."],
+                    [23, "BR", "Inside in a <b>booth</b> would be great, if you have one available.", "/ɪnˈsaɪd ɪn ə buːθ wʊd biː ɡreɪt | ɪf juː hæv wʌn əˈveɪləbl/", "(In-sáid in a búuth uúd bí grêit, if iu rév uãn a-vêi-la-bôl)", "Lá dentro em uma daquelas mesas com sofá (cabine) seria ótimo, se tiver uma disponível.", "<strong>Cultura Americana:</strong> Aquelas mesas de restaurante com bancos estofados altos chamam-se <strong>booths</strong>!"],
+                    [24, "US", "Right this way, please! Here are your menus and the kids' menus with crayons.", "/raɪt ðɪs weɪ pliːz | hɪr ɑːr jɔːr ˈmenjuːz ænd ðə kɪdz ˈmenjuːz wɪθ ˈkreɪɑːnz/", "(Ráit dhis uêi, plíiz! Ríher ar iór mê-niuz énd dhu quíds mê-niuz uídh crêi-ónz)", "Por aqui, por favor! Aqui estão os cardápios de vocês e os cardápios infantis com giz de cera.", "<strong>Expressão de Anfitrião:</strong> <em>'Right this way!'</em> = Por aqui, acompanhem-me!"],
+                    [25, "BR", "Thank you! Could you give us a few minutes to <b>look over</b> the menu?", "/θæŋk juː | kʊd juː ɡɪv ʌs ə fjuː ˈmɪnɪts tə lʊk ˈoʊvər ðə ˈmenjuː/", "(Thénk iu! Cúd iu guív âs a fiú mí-nits tu lúc ôu-ver dhu mê-niu?)", "Obrigado! Você poderia nos dar alguns minutos para dar uma olhada no cardápio?", "<strong>Phrasal Verb:</strong> <em>'Look over'</em> = examinar / dar uma olhada rápida no cardápio."],
+                    [26, "US", "Take your time! Can I start you off with something to drink while you decide?", "/teɪk jɔːr taɪm | kæn aɪ stɑːrt juː ɔːf wɪθ ˈsʌmθɪŋ tə drɪŋk waɪl juː dɪˈsaɪd/", "(Têic iór táim! Quén ai stárt iu óf uídh sâm-thin tu drínc uáil iu di-sáid?)", "Fiquem à vontade! Posso começar trazendo algo para beber enquanto vocês decidem?", "<strong>Estrutura típica de garçons:</strong> <em>'Can I start you off with drinks / appetizers?'</em> (Posso começar trazendo bebidas?)."],
+                    [27, "BR", "Yes! Could we get four glasses of iced water and two lemonades for the boys?", "/jes | kʊd wiː ɡet fɔːr ˈɡlæsɪz əv aɪst ˈwɔːtər ænd tuː ˌleməˈneɪdz fɔːr ðə bɔɪz/", "(Iés! Cúd uí guét fór glé-siz óv áist uó-rer énd tú lé-mo-nêidz fór dhu bóiz?)", "Sim! Você poderia nos trazer quatro copos de água com gelo e duas limonadas para os meninos?", "<strong>Dica nos EUA:</strong> Água da casa com gelo (<em>tap water / iced water</em>) é 100% gratuita em restaurantes americanos!"],
+                    [28, "US", "Coming right up! By the way, soft drinks and lemonade come with <b>free refills</b>.", "/ˈkʌmɪŋ raɪt ʌp | baɪ ðə weɪ sɔːft drɪŋks ænd ˌleməˈneɪd kʌm wɪθ friː ˈriːfɪlz/", "(Câ-min ráit âp! Bái dhu uêi, sóft dríncs énd lé-mo-nêid câm uídh fríi ríi-fílz)", "Saindo agora mesmo! Aliás, refrigerantes e limonada têm refil grátis.", "<strong>Expressão de Garçom:</strong> <em>'Coming right up!'</em> = Já vai sair / Trago já! E refrigerante é <em>soda</em> ou <em>soft drink</em>."],
+                    [29, "BR", "We are ready to order! For an <b>appetizer</b>, we'll share the mozzarella sticks.", "/wiː ɑːr ˈredi tuː ˈɔːrdər | fɔːr ən ˈæpɪtaɪzər wiːl ʃer ðə ˌmɑːtsəˈrelə stɪks/", "(Uí ar ré-di tu ór-der! Fór ãn é-pi-tái-zer, uíil xér dhu mó-tsa-ré-la stícs)", "Estamos prontos para pedir! De entrada, vamos dividir os palitinhos de queijo mussarela.", "<strong>🚨 Falso Amigo de Restaurante:</strong> 'Entrada' no cardápio chama-se <strong>appetizer</strong> ou <strong>starter</strong>! Já <strong>entrée</strong> nos EUA significa o <strong>prato principal</strong>!"],
+                    [30, "US", "Great choice! And what would you like for your <b>main course</b>?", "/ɡreɪt tʃɔɪs | ænd wʌt wʊd juː laɪk fɔːr jɔːr meɪn kɔːrs/", "(Grêit tchóis! Énd uót uúd iu láic fór iór mêin córs?)", "Ótima escolha! E o que vocês gostariam para o prato principal?", "<strong>Sinônimos de Prato Principal:</strong> <strong>Main course</strong>, <strong>main dish</strong> ou <strong>entrée</strong> (nos EUA)."],
+                    [31, "BR", "I'd like the grilled sirloin <b>steak</b>, and my wife will have the grilled salmon.", "/aɪd laɪk ðə ɡrɪld ˈsɜːrlɔɪn steɪk | ænd maɪ waɪf wɪl hæv ðə ɡrɪld ˈsæmən/", "(Áid láic dhu gríld sâr-lóin stêic, énd mai uáif uíl rév dhu gríld sé-mãn)", "Eu gostaria do bife de alcatra/contrafilé grelhado, e minha esposa vai querer o salmão grelhado.", "<strong>🚨 Pronúncia de 'SALMON':</strong> Na palavra <strong>salmon</strong> (salmão), a letra <strong>L é 100% muda</strong>! Pronuncie <strong>/ˈsæmən/ ('sé-mãn')</strong>!"],
+                    [32, "US", "How would you like your steak <b>cooked</b>? Rare, medium-rare, medium, or well-done?", "/haʊ wʊd juː laɪk jɔːr steɪk kʊkt | rer ˌmiːdiəm ˈrer ˈmiːdiəm ɔːr ˌwel ˈdʌn/", "(Ráu uúd iu láic iór stêic cúct? Rér, míi-di-am-rér, míi-di-am ór uél-dân?)", "Como você gostaria do ponto da sua carne? Malpassada, ao ponto para mal, ao ponto ou bem-passada?", "<strong>Os Pontos da Carne:</strong> <em>Rare</em> (malpassada), <em>Medium-rare</em> (ponto pra mal), <em>Medium</em> (ao ponto), <em>Medium-well</em> (ponto pra bem), <em>Well-done</em> (bem-passada)."],
+                    [33, "BR", "<b>Medium-rare</b> for me, please. Does the steak come with any <b>side dishes</b>?", "/ˌmiːdiəm ˈrer fɔːr miː pliːz | dʌz ðə steɪk kʌm wɪθ ˈeni saɪd ˈdɪʃɪz/", "(Míi-di-am-rér fór mi, plíiz. Dâz dhu stêic câm uídh ê-ni sáid dí-xiz?)", "Ao ponto para mal para mim, por favor. O bife vem com algum acompanhamento?", "<strong>Vocabulário de Cardápio:</strong> Acompanhamento (arroz, batata, salada) chama-se <strong>side dish</strong> ou apenas <strong>side</strong>."],
+                    [34, "US", "Yes, it comes with two sides. You can choose from mashed potatoes, French fries, steamed veggies, or Caesar salad.", "/jes ɪt kʌmz wɪθ tuː saɪdz | juː kæn tʃuːz frʌm mæʃt pəˈteɪtoʊz frentʃ fraɪz stiːmd ˈvedʒiz ɔːr ˈsiːzər ˈsæləd/", "(Iés, it câmz uídh tú sáidz. Iu quén tchúz frâm méxt po-têi-touz, frêntch fráiz, stíimd vé-djiz ór Síi-zer sé-lad)", "Sim, vem com dois acompanhamentos. Você pode escolher entre purê de batatas, batata frita, legumes no vapor ou salada Caesar.", "<strong>Pronúncia de 'Caesar':</strong> Salada Caesar pronuncia-se <strong>/ˈsiːzər/ ('Síi-zer')</strong>! E <em>mashed potatoes</em> = purê de batatas."],
+                    [35, "BR", "I'll have the <b>mashed potatoes</b> and the Caesar salad.", "/aɪl hæv ðə mæʃt pəˈteɪtoʊz ænd ðə ˈsiːzər ˈsæləd/", "(Áil rév dhu méxt po-têi-touz énd dhu Síi-zer sé-lad)", "Vou querer o purê de batatas e a salada Caesar.", "<strong>Dica de Pedido:</strong> <em>'I'll have...'</em> é a estrutura mais elegante para escolher itens do cardápio em restaurantes."],
+                    [36, "US", "Could I get the salad dressing <b>on the side</b>, or mixed in?", "/kʊd aɪ ɡet ðə ˈsæləd ˈdresɪŋ ɑːn ðə saɪd | ɔːr mɪkst ɪn/", "(Cúd ai guét dhu sé-lad dré-sin ón dhu sáid, ór mícst in?)", "Você prefere o molho da salada separado à parte, ou já misturado?", "<strong>Bloco de Ouro:</strong> <strong>On the side</strong> significa 'separado num potinho à parte'. <strong>Salad dressing</strong> = molho de salada."],
+                    [37, "BR", "<b>On the side</b>, please. Also, my youngest son is allergic to peanuts; does the sauce contain nuts?", "/ɑːn ðə saɪd pliːz | ˈɔːlsoʊ maɪ ˈjʌŋɡɪst sʌn ɪz əˈlɜːrdʒɪk tə ˈpiːnʌts | dʌz ðə sɔːs kənˈteɪn nʌts/", "(Ón dhu sáid, plíiz. Óu-sôu, mai iân-guest sân iz a-lâr-djic tu píi-nâts; dâz dhu sós con-têin nâts?)", "À parte, por favor. Além disso, meu filho mais novo é alérgico a amendoim; o molho contém castanhas/nozes?", "<strong>Segurança Alimentar:</strong> <em>'Allergic TO...'</em> (alérgico a). <em>Peanuts</em> = amendoim; <em>tree nuts</em> = castanhas/nozes/amêndoas."],
+                    [38, "US", "Thank you for letting me know! Our kitchen is 100% nut-free, and I'll put an allergy alert on your ticket.", "/θæŋk juː fɔːr ˈletɪŋ miː noʊ | ˈaʊər ˈkɪtʃɪn ɪz wʌn ˈhʌndrəd pərˈsent nʌt friː | ænd aɪl pʊt ən ˈælərdʒi əˈlɜːrt ɑːn jɔːr ˈtɪkɪt/", "(Thénk iu fór lé-rin mi nôu! Áu-er quí-tchen iz uãn rân-dred per-sênt nât-fríi, énd áil pút ãn é-ler-dji a-lârt ón iór tí-quet)", "Obrigada por me avisar! Nossa cozinha é 100% livre de nozes/amendoim, e colocarei um alerta de alergia na sua comanda.", "<strong>Sufixo '-free':</strong> <em>Nut-free</em> (sem nozes/amendoim), <em>gluten-free</em> (sem glúten), <em>dairy-free</em> (sem lactose/laticínios), <em>sugar-free</em> (sem açúcar)."],
+                    [39, "BR", "That's a relief! For the kids, we'll get two cheeseburgers with <b>no onions</b>.", "/ðæts ə rɪˈliːf | fɔːr ðə kɪdz wiːl ɡet tuː ˈtʃiːzbɜːrɡərz wɪθ noʊ ˈʌnjənz/", "(Dhéts a ri-líif! Fór dhu quíds, uíil guét tú tchíiz-bâr-guers uídh nôu â-ni-anz)", "Que alívio! Para as crianças, vamos pedir dois cheeseburgers sem cebola.", "<strong>Tirando Ingredientes:</strong> Para pedir 'sem cebola / sem picles', diga <strong>with no onions</strong> ou <strong>hold the onions</strong>!"],
+                    [40, "US", "Got it: two kids' cheeseburgers, plain, with French fries! I'll put your order in right away.", "/ɡɑːt ɪt | tuː kɪdz ˈtʃiːzbɜːrɡərz pleɪn wɪθ frentʃ fraɪz | aɪl pʊt jɔːr ˈɔːrdər ɪn raɪt əˈweɪ/", "(Gót it: tú quíds tchíiz-bâr-guers, plêin, uídh frêntch fráiz! Áil pút iór ór-der in ráit a-uêi)", "Anotado: dois cheeseburgers infantis, simples (só carne e queijo), com batata frita! Vou lançar o pedido de vocês imediatamente.", "<strong>Dica para Crianças nos EUA:</strong> Pedir um hambúrguer <strong>plain</strong> significa apenas pão, carne e queijo (sem salada, cebola ou molhos)!"],
+                    [41, "BR", "Excuse me, Megan, I dropped my fork on the floor. Could I get a clean set of <b>silverware</b>?", "/ɪkˈskjuːz miː ˈmeɡən aɪ drɑːpt maɪ fɔːrk ɑːn ðə flɔːr | kʊd aɪ ɡet ə kliːn set əv ˈsɪlvərwer/", "(Ecs-quiúz mi, Mé-gan, ai drópt mai fórc ón dhu flór. Cúd ai guét a clíin sét óv síl-ver-uér?)", "Com licença, Megan, deixei meu garfo cair no chão. Eu poderia pegar um jogo limpo de talheres?", "<strong>Vocabulário de Mesa:</strong> Talheres (garfo, faca e colher) nos EUA são chamados de <strong>silverware</strong> ou <strong>cutlery</strong>."],
+                    [42, "US", "Of course! Here is a clean fork and knife, and I brought some extra ketchup for the boys.", "/əv kɔːrs | hɪr ɪz ə kliːn fɔːrk ænd naɪf | ænd aɪ brɔːt sʌm ˈekstrə ˈketʃəp fɔːr ðə bɔɪz/", "(Óv córs! Ríher iz a clíin fórc énd náif, énd ai brót sâm écs-tra qué-tchâp fór dhu bóiz)", "Claro! Aqui estão um garfo e faca limpos, e trouxe um pouco de ketchup extra para os meninos.", "<strong>Pronúncia de 'Knife':</strong> Assim como em <em>know</em> e <em>kneel</em>, o 'K' inicial de <strong>knife</strong> (faca) é mudo: diga <em>'náif'</em>!"]
+                ]
+            },
+            {
+                actId: 3,
+                title: "Ato 3: Resolvendo Problemas no Prato, Sobremesa, Embalagem p/ Viagem e a Conta (Nível Intermediário – Falas #43 a #62)",
+                items: [
+                    [43, "BR", "Excuse me, Megan. I ordered my steak medium-rare, but it came out <b>well-done</b>.", "/ɪkˈskjuːz miː ˈmeɡən | aɪ ˈɔːrdərd maɪ steɪk ˌmiːdiəm ˈrer | bʌt ɪt keɪm aʊt ˌwel ˈdʌn/", "(Ecs-quiúz mi, Mé-gan. Ai ór-derd mai stêic míi-di-am-rér, bât it quêim áut uél-dân)", "Com licença, Megan. Eu pedi meu bife ao ponto para mal, mas ele veio bem-passado.", "<strong>Phrasal Verb:</strong> <em>'Came out'</em> na cozinha significa 'saiu / ficou pronto de tal jeito'."],
+                    [44, "US", "Oh, I'm so sorry about that! Let me take this back to the kitchen and have the chef grill a fresh one for you.", "/oʊ aɪm soʊ ˈsɑːri əˈbaʊt ðæt | let miː teɪk ðɪs bæk tə ðə ˈkɪtʃɪn ænd hæv ðə ʃef ɡrɪl ə freʃ wʌn fɔːr juː/", "(Ôu, aim sôu só-ri a-báut dhét! Lét mi têic dhis béc tu dhu quí-tchen énd rév dhu xéf gríl a fréx uãn fór iu)", "Ah, peço mil desculpas por isso! Deixe-me levar isto de volta para a cozinha e pedir ao chef para grelhar um novo para você.", "<strong>Veja o TAKE BACK + Causativa:</strong> Levar o prato de volta (<em>take this back</em>) e pedir ao chef para fazer (<em>have the chef grill</em>)."],
+                    [45, "BR", "Thank you, I appreciate it! Everything else on the table is <b>delicious</b>.", "/θæŋk juː aɪ əˈpriːʃieɪt ɪt | ˈevriθɪŋ els ɑːn ðə ˈteɪbl ɪz dɪˈlɪʃəs/", "(Thénk iu, ai a-príi-xi-êit it! É-vri-thin éls ón dhu têi-bôl iz di-lí-xâs)", "Obrigado, eu agradeço! Todo o resto na mesa está delicioso.", "<strong>Dica de Educação:</strong> Ao reclamar de um item nos EUA, elogiar o restante da comida garante um atendimento impecável."],
+                    [46, "US", "Here is your new medium-rare steak! And the manager took the appetizer off your bill to apologize for the wait.", "/hɪr ɪz jɔːr nuː ˌmiːdiəm ˈrer steɪk | ænd ðə ˈmænɪdʒər tʊk ði ˈæpɪtaɪzər ɔːf jɔːr bɪl tuː əˈpɑːlədʒaɪz fɔːr ðə weɪt/", "(Ríher iz iór nú míi-di-am-rér stêic! Énd dhu mé-ni-djer túk dhi é-pi-tái-zer óf iór bíl tu a-pó-lo-djáiz fór dhu uêit)", "Aqui está o seu novo bife ao ponto para mal! E o gerente tirou a entrada da sua conta para pedir desculpas pela espera.", "<strong>Phrasal Verb 'Take off':</strong> Aqui <em>'took the appetizer off your bill'</em> significa 'retirou/abonou a entrada da conta'!"],
+                    [47, "BR", "Wow, that was very kind of him! This steak is cooked to perfection.", "/waʊ ðæt wəz ˈveri kaɪnd əv hɪm | ðɪs steɪk ɪz kʊkt tə pərˈfekʃn/", "(Uáu, dhét uóz vé-ri cáind óv rím! Dhis stêic iz cúct tu per-féc-xãn)", "Uau, foi muita gentileza da parte dele! Este bife está assado/grelhado à perfeição.", "<strong>Expressão Elogiosa:</strong> <em>'That was very kind of you/him'</em> = Foi muita gentileza sua/dele."],
+                    [48, "US", "I'm glad you like it! Did you guys save any room for <b>dessert</b>?", "/aɪm ɡlæd juː laɪk ɪt | dɪd juː ɡaɪz seɪv ˈeni ruːm fɔːr dɪˈzɜːrt/", "(Aim gléd iu láic it! Did iu gáiz sêiv ê-ni rúum fór di-zârt?)", "Que bom que gostou! Vocês guardaram um espacinho (no estômago) para a sobremesa?", "<strong>🚨 Cuidado Extremo (DESSERT vs. DESERT):</strong> Sobremesa (2 S) tem a sílaba forte no final: <strong>/dɪˈzɜːrt/ ('di-ZÂRT')</strong>. Deserto (1 S) é <strong>/ˈdezərt/ ('DÉ-zert')</strong>!"],
+                    [49, "BR", "We are pretty full, because the portions here are huge! Could we just share one slice of cheesecake with four spoons?", "/wiː ɑːr ˈprɪti fʊl bɪˈkɔːz ðə ˈpɔːrʃnz hɪr ɑːr hjuːdʒ | kʊd wiː dʒʌst ʃer wʌn slaɪs əv ˈtʃiːzkeɪk wɪθ fɔːr spuːnz/", "(Uí ar prí-ti fúl, bi-cóz dhu pór-xãnz ríher ar riúdj! Cúd uí djâst xér uãn sláis óv tchíiz-quêic uídh fór spúunz?)", "Estamos bem cheios, porque as porções aqui são enormes! Poderíamos apenas dividir uma fatia de cheesecake com quatro colheres?", "<strong>Falso Amigo 'Satisfied':</strong> Para dizer 'estou cheio/satisfeito de comida', diga <strong>I'm full</strong>!"],
+                    [50, "US", "Absolutely! And would you like some <b>to-go boxes</b> for your leftovers?", "/ˌæbsəˈluːtli | ænd wʊd juː laɪk sʌm tə ɡoʊ ˈbɑːksɪz fɔːr jɔːr ˈleftoʊvərz/", "(Éb-so-lút-li! Énd uúd iu láic sâm tu-gôu bóc-siz fór iór léft-ôu-verz?)", "Com certeza! E vocês gostariam de algumas embalagens para viagem para levar o que sobrou?", "<strong>Costume Americano:</strong> Levar o que sobrou no prato (<em>leftovers</em>) é super comum nos EUA; peça uma <strong>to-go box</strong>!"],
+                    [51, "BR", "Yes, please! Two to-go boxes, and whenever you have a chance, could we get the <b>check</b>?", "/jes pliːz | tuː tə ɡoʊ ˈbɑːksɪz | ænd wenˈevər juː hæv ə tʃæns kʊd wiː ɡet ðə tʃek/", "(Iés, plíiz! Tú tu-gôu bóc-siz, énd uén-é-ver iu rév a tchéns, cúd uí guét dhu tchéc?)", "Sim, por favor! Duas caixinhas para viagem e, quando você puder, poderia nos trazer a conta?", "<strong>Check vs. Bill:</strong> Nos restaurantes dos EUA, a conta é quase sempre chamada de <strong>the check</strong> (<em>Can I get the check, please?</em>)."],
+                    [52, "US", "Sure thing! Will this be all together on one check, or would you like to <b>split it</b>?", "/ʃʊr θɪŋ | wɪl ðɪs biː ɔːl təˈɡeðər ɑːn wʌn tʃek | ɔːr wʊd juː laɪk tə splɪt ɪt/", "(Xúr thín! Uíl dhis bí ól tu-gué-dher ón uãn tchéc, ór uúd iu láic tu splít it?)", "Com certeza! Vai ser tudo junto em uma única conta, ou vocês gostariam de dividi-la?", "<strong>Verbo da Aula Extra 5:</strong> Dividir a conta do restaurante em inglês é <strong>split the check / split the bill</strong>!"],
+                    [53, "BR", "All together on one check, please. It's <b>on me</b> tonight!", "/ɔːl təˈɡeðər ɑːn wʌn tʃek pliːz | ɪts ɑːn miː təˈnaɪt/", "(Ól tu-gué-dher ón uãn tchéc, plíiz. Its ón mi tu-náit!)", "Tudo junto em uma conta só, por favor. Hoje à noite é por minha conta!", "<strong>Expressão Generosa:</strong> Dizer <strong>'It's on me!'</strong> (ou <em>My treat!</em>) significa 'Eu pago / É por minha conta!'."],
+                    [54, "US", "Here is the check, sir. You can pay right here at the table using this handheld terminal.", "/hɪr ɪz ðə tʃek sɜːr | juː kæn peɪ raɪt hɪr æt ðə ˈteɪbl ˈjuːzɪŋ ðɪs ˈhændheld ˈtɜːrmɪnl/", "(Ríher iz dhu tchéc, sâr. Iu quén pêi ráit ríher ét dhu têi-bôl iú-zin dhis rénd-réld târ-mi-nôl)", "Aqui está a conta, senhor. Você pode pagar aqui mesmo na mesa usando esta maquininha portátil.", "<strong>Vocabulário:</strong> A maquininha de cartão chama-se <strong>card reader</strong> ou <strong>card terminal</strong>."],
+                    [55, "BR", "Let me see... Does the total already include the <b>gratuity</b>, or do I add the tip on the screen?", "/let miː siː | dʌz ðə ˈtoʊtl ɔːlˈredi ɪnˈkluːd ðə ɡrəˈtuːəti | ɔːr duː aɪ æd ðə tɪp ɑːn ðə skriːn/", "(Lét mi síi... Dâz dhu tôu-rôl óu-ré-di in-clúd dhu gra-tú-i-ti, ór du ai éd dhu típ ón dhu scríin?)", "Deixe-me ver... O total já inclui a taxa de serviço (gorjeta), ou eu adiciono a gorjeta na tela?", "<strong>Atenção nas Contas dos EUA:</strong> Nas notas de restaurante, a palavra formal para gorjeta/taxa de serviço é <strong>Gratuity</strong>!"],
+                    [56, "US", "Gratuity isn't included for tables under six people. You can just select 18%, 20%, or 22% on the screen.", "/ɡrəˈtuːəti ˈɪznt ɪnˈkluːdɪd fɔːr ˈteɪblz ˈʌndər sɪks ˈpiːpl | juː kæn dʒʌst sɪˈlekt eɪˈtiːn ˈtwenti ɔːr ˈtwenti tuː pərˈsent ɑːn ðə skriːn/", "(Gra-tú-i-ti í-zânt in-clú-ded fór têi-bôlz ân-der sícs píi-pôl. Iu quén djâst si-léct ei-tíin, tuên-ti ór tuên-ti-tú per-sênt ón dhu scríin)", "A taxa de serviço não vem incluída para mesas com menos de seis pessoas. Você pode apenas selecionar 18%, 20% ou 22% na tela.", "<strong>Regra Cultural:</strong> Para grupos de 6 ou mais pessoas (<em>parties of 6 or more</em>), os restaurantes já incluem 18% automaticamente."],
+                    [57, "BR", "I selected 20% because your service was fantastic! Do I need to sign the <b>customer copy</b>?", "/aɪ sɪˈlektɪd ˈtwenti pərˈsent bɪˈkɔːz jɔːr ˈsɜːrvɪs wəz fænˈtæstɪk | duː aɪ niːd tə saɪn ðə ˈkʌstəmər ˈkɑːpi/", "(Ai si-léc-ted tuên-ti per-sênt bi-cóz iór sâr-vis uóz fén-tés-tic! Du ai níid tu sáin dhu câs-to-mer có-pi?)", "Selecionei 20% porque o seu atendimento foi fantástico! Eu preciso assinar a via do cliente?", "<strong>Vias do Recibo nos EUA:</strong> Quando sai papel, você assina e deixa na mesa a <strong>Merchant Copy</strong> (via do estabelecimento) e leva a <strong>Customer Copy</strong> (via do cliente)."],
+                    [58, "US", "Thank you so much! Since you paid on the digital terminal, no signature is needed. Here is your printed receipt.", "/θæŋk juː soʊ mʌtʃ | sɪns juː peɪd ɑːn ðə ˈdɪdʒɪtl ˈtɜːrmɪnl noʊ ˈsɪɡnətʃər ɪz ˈniːdɪd | hɪr ɪz jɔːr ˈprɪntɪd rɪˈsiːt/", "(Thénk iu sôu mâtch! Síns iu pêid ón dhu dí-dji-tôl târ-mi-nôl, nôu síg-na-tcher iz níi-ded. Ríher iz iór prín-ted ri-síit)", "Muito obrigada! Como você pagou na maquininha digital, não precisa de assinatura. Aqui está o seu recibo impresso.", "<strong>Revisão de Pronúncia:</strong> Lembre-se sempre de que o P em <em>receipt</em> é mudo: <em>ri-síit</em>!"],
+                    [59, "BR", "Oh, before we leave, could you tell me where the <b>restrooms</b> are?", "/oʊ bɪˈfɔːr wiː liːv | kʊd juː tel miː wer ðə ˈrestruːmz ɑːr/", "(Ôu, bi-fór uí líiv, cúd iu tél mi uér dhu rést-rúumz ar?)", "Ah, antes de sairmos, você poderia me dizer onde ficam os banheiros?", "<strong>Banheiro Público vs. de Casa:</strong> Em restaurantes, shoppings e lojas nos EUA, banheiro chama-se <strong>restroom</strong> (em casa é <em>bathroom</em>)."],
+                    [60, "US", "Walk straight past the bar and turn right; the restrooms are at the end of the hallway.", "/wɔːk streɪt pæst ðə bɑːr ænd tɜːrn raɪt | ðə ˈrestruːmz ɑːr æt ði end əv ðə ˈhɔːlweɪ/", "(Uóc strêit pést dhu bár énd târn ráit; dhu rést-rúumz ar ét dhi ênd óv dhu ról-uêi)", "Caminhe reto passando pelo bar e vire à direita; os banheiros ficam no final do corredor.", "<strong>Revisão de Preposições:</strong> <em>'Walk past'</em> = passe por; <em>'at the end of the hallway'</em> = no fim do corredor."],
+                    [61, "BR", "Thanks again for everything, Megan! Have a great rest of your shift!", "/θæŋks əˈɡen fɔːr ˈevriθɪŋ ˈmeɡən | hæv ə ɡreɪt rest əv jɔːr ʃɪft/", "(Thénks a-guén fór é-vri-thin, Mé-gan! Rév a grêit rést óv iór xíft!)", "Obrigado mais uma vez por tudo, Megan! Tenha um ótimo restante de turno!", "<strong>Educação Americana:</strong> Desejar <em>'Have a good rest of your day / shift!'</em> é super natural ao se despedir."],
+                    [62, "US", "Thank you, Pedro! It was a pleasure serving your family. Have a wonderful night!", "/θæŋk juː ˈpeɪdroʊ | ɪt wəz ə ˈpleʒər ˈsɜːrvɪŋ jɔːr ˈfæməli | hæv ə ˈwʌndərfl naɪt/", "(Thénk iu, Pêi-drou! It uóz a plé-jer sâr-vin iór fé-mi-li. Rév a uân-der-fôl náit!)", "Obrigada, Pedro! Foi um prazer atender a sua família. Tenham uma noite maravilhosa!", "<strong>Fechando o Restaurante:</strong> Agora partimos para o shopping e para o supermercado!"]
+                ]
+            },
+            {
+                actId: 4,
+                title: "Ato 4: Na Loja de Roupas e Outlet – Provador, Tamanhos e Trocas (Nível Intermediário-Avançado – Falas #63 a #84)",
+                items: [
+                    [63, "BR", "Hi there! Are these winter jackets on this rack <b>on sale</b>?", "/haɪ ðer | ɑːr ðiːz ˈwɪntər ˈdʒækɪts ɑːn ðɪs ræk ɑːn seɪl/", "(Rái dhér! Ar dhíiz uín-ter djé-quets ón dhis réc ón sêil?)", "Olá! Estas jaquetas de inverno nesta arara estão em promoção (com desconto)?", "<strong>🚨 On sale vs. For sale:</strong> <strong>On sale</strong> = em promoção / com desconto; <strong>For sale</strong> = à venda!"],
+                    [64, "US", "Hi! Yes, everything on that clearance rack is 40% off the original price tag!", "/haɪ | jes ˈevriθɪŋ ɑːn ðæt ˈklɪrəns ræk ɪz ˈfɔːrti pərˈsent ɔːf ði əˈrɪdʒənl praɪs tæɡ/", "(Rái! Iés, é-vri-thin ón dhét clí-rans réc iz fór-ti per-sênt óf dhi o-rí-dji-nôl práis tég!)", "Oi! Sim, tudo naquela arara de queima de estoque está com 40% de desconto sobre a etiqueta de preço original!", "<strong>Palavras de Ouro em Outlets:</strong> <strong>Clearance</strong> = liquidação total / queima de estoque; <strong>40% off</strong> = 40% de desconto."],
+                    [65, "BR", "Awesome! I'm looking for this navy blue jacket in a <b>size large</b>, but I only see medium here.", "/ˈɔːsəm | aɪm ˈlʊkɪŋ fɔːr ðɪs ˈneɪvi bluː ˈdʒækɪt ɪn ə saɪz lɑːrdʒ | bʌt aɪ ˈoʊnli siː ˈmiːdiəm hɪr/", "(Ó-sâm! Aim lú-quin fór dhis nêi-vi blú djé-quet in a sáiz lárdj, bât ai ôun-li síi míi-di-am ríher)", "Excelente! Estou procurando esta jaqueta azul-marinho no tamanho G (grande), mas só vejo M aqui.", "<strong>Tamanhos de Roupa:</strong> <em>XS</em> (PP), <em>S - Small</em> (P), <em>M - Medium</em> (M), <em>L - Large</em> (G), <em>XL - Extra Large</em> (GG)."],
+                    [66, "US", "Let me scan the barcode to check if we have a large in the back stockroom.", "/let miː skæn ðə ˈbɑːrkoʊd tə tʃek ɪf wiː hæv ə lɑːrdʒ ɪn ðə bæk ˈstɑːkruːm/", "(Lét mi skén dhu bár-côud tu tchéc if uí rév a lárdj in dhu béc stóc-rúum)", "Deixe-me escanear o código de barras para checar se temos uma tamanho G lá atrás no estoque.", "<strong>Vocabulário de Loja:</strong> Código de barras = <strong>barcode</strong>; etiqueta de preço = <strong>price tag</strong>."],
+                    [67, "BR", "While you check, can I <b>try on</b> these two pairs of jeans in the fitting room?", "/waɪl juː tʃek | kæn aɪ traɪ ɑːn ðiːz tuː perz əv dʒiːnz ɪn ðə ˈfɪtɪŋ ruːm/", "(Uáil iu tchéc, quén ai trái ón dhíiz tú pérs óv djíinz in dhu fí-rin rúum?)", "Enquanto você olha, posso experimentar estas duas calças jeans no provador?", "<strong>Phrasal Verb de Roupa:</strong> Experimentar uma peça de roupa ou calçado no corpo é sempre <strong>try ON</strong>! Provador = <strong>fitting room</strong> (ou <em>dressing room</em>)."],
+                    [68, "US", "Sure! The fitting rooms are right in the back, and here is the large jacket I found for you!", "/ʃʊr | ðə ˈfɪtɪŋ ruːmz ɑːr raɪt ɪn ðə bæk | ænd hɪr ɪz ðə lɑːrdʒ ˈdʒækɪt aɪ faʊnd fɔːr juː/", "(Xúr! Dhu fí-rin rúumz ar ráit in dhu béc, énd ríher iz dhu lárdj djé-quet ai fáund fór iu!)", "Claro! Os provadores ficam bem lá no fundo, e aqui está a jaqueta G que encontrei para você!", "<strong>Gramática de 'Jeans / Pants / Shoes':</strong> Palavras de duas pernas/pés são sempre plurais em inglês, por isso dizemos <em>'two pairs of jeans'</em>."],
+                    [69, "BR", "Thank you! The jacket <b>fits</b> like a glove, but these jeans are a little too tight around the waist.", "/θæŋk juː | ðə ˈdʒækɪt fɪts laɪk ə ɡlʌv | bʌt ðiːz dʒiːnz ɑːr ə ˈlɪtl tuː taɪt əˈraʊnd ðə weɪst/", "(Thénk iu! Dhu djé-quet fíts láic a glâv, bât dhíiz djíinz ar a lí-rôl tú táit a-ráund dhu uêist)", "Obrigado! A jaqueta serviu como uma luva, mas esta calça jeans está um pouco apertada demais na cintura.", "<strong>Fit vs. Suit:</strong> <strong>Fit</strong> = servir no tamanho certo; <strong>Suit / Match</strong> = cair bem / combinar com seu estilo."],
+                    [70, "US", "Would you like to try one size up? In US sizes, you probably need a 34 waist by 32 length.", "/wʊd juː laɪk tə traɪ wʌn saɪz ʌp | ɪn juː es ˈsaɪzɪz juː ˈprɑːbəbli niːd ə ˈθɜːrti fɔːr weɪst baɪ ˈθɜːrti tuː leŋθ/", "(Uúd iu láic tu trái uãn sáiz âp? In Iu-És sái-ziz, iu pró-ba-bli níid a thâr-ti-fór uêist bái thâr-ti-tú lênth)", "Você gostaria de experimentar um número maior? Nos tamanhos dos EUA, você provavelmente precisa de 34 de cintura por 32 de comprimento.", "<strong>Segredo das Calças nos EUA:</strong> Calças masculinas têm dois números na etiqueta, ex: <strong>34x32</strong> (o 1º é a cintura <em>Waist</em> e o 2º é o comprimento da perna <em>Length</em>)!"],
+                    [71, "BR", "Oh, that explains why the legs were too long! Also, I want to buy sneakers for my sons. How do kids' shoe sizes work?", "/oʊ ðæt ɪkˈspleɪnz waɪ ðə leɡz wɜːr tuː lɔːŋ | ˈɔːlsoʊ aɪ wɑːnt tə baɪ ˈsniːkərz fɔːr maɪ sʌnz | haʊ duː kɪdz ʃuː ˈsaɪzɪz wɜːrk/", "(Ôu, dhét ecs-plêinz uái dhu légz uâr tú lóng! Óu-sôu, ai uónt tu bái sníi-quers fór mai sânz. Ráu du quíds xú sái-ziz uârk?)", "Ah, isso explica por que as pernas ficaram compridas demais! Além disso, quero comprar tênis para os meus filhos. Como funcionam os tamanhos de calçados infantis?", "<strong>Vocabulário:</strong> Tênis de corrida/casual nos EUA chama-se <strong>sneakers</strong> (ou <em>running shoes</em>)."],
+                    [72, "US", "We have a conversion chart right here! If you don't get the size right, what is great is our 30-day <b>return policy</b>.", "/wiː hæv ə kənˈvɜːrʒn tʃɑːrt raɪt hɪr | ɪf juː doʊnt ɡet ðə saɪz raɪt wʌt ɪz ɡreɪt ɪz ˈaʊər ˈθɜːrti deɪ rɪˈtɜːrn ˈpɑːləsi/", "(Uí rév a con-vâr-jãn tchárt ráit ríher! If iu dôunt guét dhu sáiz ráit, uót iz grêit iz áu-er thâr-ti-dêi ri-târn pó-li-si)", "Temos uma tabela de conversão bem aqui! Se você não acertar o tamanho, o ótimo é a nossa política de devolução/troca de 30 dias.", "<strong>Vocabulário de Compras:</strong> <em>'Conversion chart'</em> = tabela de conversão de medidas; <em>'return policy'</em> = política de trocas e devoluções."],
+                    [73, "BR", "If the shoes don't fit them, can I bring them back to <b>exchange</b> them or get a <b>refund</b>?", "/ɪf ðə ʃuːz doʊnt fɪt ðem | kæn aɪ brɪŋ ðem bæk tuː ɪksˈtʃeɪndʒ ðem ɔːr ɡet ə ˈriːfʌnd/", "(If dhu xúuz dôunt fít dhém, quén ai brín dhém béc tu ecs-tchêindj dhém ór guét a ríi-fând?)", "Se os tênis não servirem neles, posso trazê-los de volta para trocá-los ou receber o reembolso (estorno)?", "<strong>Palavras Indispensáveis:</strong> <strong>Exchange</strong> = trocar por outro tamanho/peça; <strong>Refund</strong> = devolução do dinheiro / reembolso!"],
+                    [74, "US", "Yes! As long as you keep the receipt and the original tags attached, we give you a full refund.", "/jes | æz lɔːŋ æz juː kiːp ðə rɪˈsiːt ænd ði əˈrɪdʒənl tæɡz əˈtætʃt | wiː ɡɪv juː ə fʊl ˈriːfʌnd/", "(Iés! Éz lóng éz iu quíip dhu ri-síit énd dhi o-rí-dji-nôl tégz a-tétcht, uí guív iu a fúl ríi-fând)", "Sim! Contanto que você guarde o recibo e mantenha as etiquetas originais presas na peça, damos o reembolso total.", "<strong>Revisão de Conectivo:</strong> Veja <em>'As long as'</em> (Contanto que / Desde que) em uso real."],
+                    [75, "BR", "That's super fair! I'll take the navy jacket, the 34x32 jeans, and these two pairs of kids' sneakers.", "/ðæts ˈsuːpər fer | aɪl teɪk ðə ˈneɪvi ˈdʒækɪt ðə ˈθɜːrti fɔːr baɪ ˈθɜːrti tuː dʒiːnz ænd ðiːz tuː perz əv kɪdz ˈsniːkərz/", "(Dhéts sú-per fér! Áil têic dhu nêi-vi djé-quet, dhu thâr-ti-fór bái thâr-ti-tú djíinz énd dhíiz tú pérs óv quíds sníi-quers)", "Isso é super justo! Vou levar a jaqueta azul-marinho, o jeans 34x32 e estes dois pares de tênis infantis.", "<strong>O TAKE das Compras:</strong> Quando você decide o que vai levar para o caixa, a frase campeã é sempre <strong>I'll take...</strong>!"],
+                    [76, "US", "Awesome! Follow me to the checkout counter. Do you have our store rewards app or any <b>coupons</b>?", "/ˈɔːsəm | ˈfɑːloʊ miː tə ðə ˈtʃekaʊt ˈkaʊntər | duː juː hæv ˈaʊər stɔːr rɪˈwɔːrdz æp ɔːr ˈeni ˈkuːpɑːnz/", "(Ó-sâm! Fó-lôu mi tu dhu tchéc-áut cáun-ter. Du iu rév áu-er stór ri-uórdz ép ór ê-ni cú-pónz?)", "Excelente! Siga-me até o balcão do caixa. Você tem o aplicativo de fidelidade da loja ou algum cupom de desconto?", "<strong>Pronúncia de 'Coupon':</strong> Cupom de desconto em inglês pronuncia-se <strong>/ˈkuːpɑːn/ ('cú-pón')</strong>."],
+                    [77, "BR", "I got a 15% discount coupon in my email when I connected to the mall Wi-Fi. Can I use it on top of the sale?", "/aɪ ɡɑːt ə ˌfɪfˈtiːn pərˈsent ˈdɪskaʊnt ˈkuːpɑːn ɪn maɪ ˈiːmeɪl wen aɪ kəˈnektɪd tə ðə mɔːl ˈwaɪ faɪ | kæn aɪ juːz ɪt ɑːn tɑːp əv ðə seɪl/", "(Ai gót a fif-tíin per-sênt dís-cáunt cú-pón in mai í-meil uén ai co-néc-ted tu dhu mól Uái-Fái. Quén ai iúz it ón tóp óv dhu sêil?)", "Eu recebi um cupom de 15% de desconto no meu e-mail quando conectei no Wi-Fi do shopping. Posso usá-lo cumulativamente com a promoção?", "<strong>Bloco Útil de Desconto:</strong> <em>'On top of the sale'</em> = acumulando em cima da promoção já existente!"],
+                    [78, "US", "Yes, that promo code stacks with the clearance discount! You just saved an extra $25!", "/jes ðæt ˈproʊmoʊ koʊd stæks wɪθ ðə ˈklɪrəns ˈdɪskaʊnt | juː dʒʌst seɪvd ən ˈekstrə ˈtwenti faɪv ˈdɑːlərz/", "(Iés, dhét prôu-môu côud stécs uídh dhu clí-rans dís-cáunt! Iu djâst sêivd ãn écs-tra tuên-ti-fáiv dó-lars!)", "Sim, esse código promocional acumula com o desconto da liquidação! Você acabou de economizar mais 25 dólares!", "<strong>Verbo 'Stack' em Compras:</strong> Quando dois descontos são cumulativos, os americanos dizem que os cupons <strong>stack</strong> (empilham/acumulam)!"],
+                    [79, "BR", "What a bargain! Why did the total on the screen go up by 7% at the end, though?", "/wʌt ə ˈbɑːrɡən | waɪ dɪd ðə ˈtoʊtl ɑːn ðə skriːn ɡoʊ ʌp baɪ ˈsevən pərˈsent æt ði end ðoʊ/", "(Uót a bár-guen! Uái did dhu tôu-rôl ón dhu scríin gôu âp bái sé-ven per-sênt ét dhi ênd, dhôu?)", "Que pechincha (baita negócio)! Mas por que o total na tela subiu 7% no final?", "<strong>Exclamação de Compras:</strong> <em>'What a bargain!'</em> (ou <em>What a steal!</em>) = Que pechincha! / Que barato!"],
+                    [80, "US", "That's the local state <b>sales tax</b>! In the US, tax is always added at the register, not on the price tag.", "/ðæts ðə ˈloʊkl steɪt seɪlz tæks | ɪn ðə juː es tæks ɪz ˈɔːlweɪz ˈædɪd æt ðə ˈredʒɪstər nɑːt ɑːn ðə praɪs tæɡ/", "(Dhéts dhu lôu-côl stêit sêilz técs! In dhu Iu-És, técs iz óu-ueis é-ded ét dhu ré-djis-ter, nót ón dhu práis tég)", "Esse é o imposto estadual sobre vendas! Nos EUA, o imposto é sempre somado no caixa, e não na etiqueta de preço.", "<strong>Lembrete Financeiro:</strong> Sempre calcule cerca de 6,5% a 8,5% a mais sobre o valor da etiqueta nas lojas americanas."],
+                    [81, "BR", "Right, I always forget about the sales tax! Could you also include a <b>gift receipt</b> for the sneakers?", "/raɪt aɪ ˈɔːlweɪz fərˈɡet əˈbaʊt ðə seɪlz tæks | kʊd juː ˈɔːlsoʊ ɪnˈkluːd ə ɡɪft rɪˈsiːt fɔːr ðə ˈsniːkərz/", "(Ráit, ai óu-ueis for-guét a-báut dhu sêilz técs! Cúd iu óu-sôu in-clúd a guíft ri-síit fór dhu sníi-quers?)", "Verdade, eu sempre esqueço do imposto sobre vendas! Você poderia incluir também um cupom de troca de presente para os tênis?", "<strong>Vocabulário:</strong> <strong>Gift receipt</strong> é o comprovante para troca que não mostra o preço pago!"],
+                    [82, "US", "Done! I put the gift receipt inside the shoebox. Would you like a paper bag for 10 cents?", "/dʌn | aɪ pʊt ðə ɡɪft rɪˈsiːt ɪnˈsaɪd ðə ˈʃuːbɑːks | wʊd juː laɪk ə ˈpeɪpər bæɡ fɔːr ten sents/", "(Dân! Ai pút dhu guíft ri-síit in-sáid dhu xú-bócs. Uúd iu láic a pêi-per bég fór tén sênts?)", "Pronto! Coloquei o comprovante de presente dentro da caixa de sapatos. Você gostaria de uma sacola de papel por 10 centavos?", "<strong>Costume em Muitas Cidades:</strong> Muitas lojas perguntam se você quer comprar a sacola (<em>bag</em>) por alguns centavos."],
+                    [83, "BR", "Yes, a large bag, please, so I can carry everything easily.", "/jes ə lɑːrdʒ bæɡ pliːz | soʊ aɪ kæn ˈkæri ˈevriθɪŋ ˈiːzəli/", "(Iés, a lárdj bég, plíiz, sôu ai quén qué-ri é-vri-thin í-zi-li)", "Sim, uma sacola grande, por favor, para que eu possa carregar tudo facilmente.", "<strong>Carry vs. Take:</strong> <em>'Carry'</em> foca no esforço físico de carregar o peso nas mãos."],
+                    [84, "US", "Here you go! Thank you for shopping with us today!", "/hɪr juː ɡoʊ | θæŋk juː fɔːr ˈʃɑːpɪŋ wɪθ ʌs təˈdeɪ/", "(Ríher iu gôu! Thénk iu fór xó-pin uídh âs tu-dêi!)", "Aqui está! Obrigada por comprar conosco hoje!", "<strong>Expressão ao Entregar Algo:</strong> <strong>Here you go!</strong> (ou <em>Here you are!</em>) é o que todo americano diz ao entregar uma sacola ou troco."]
+                ]
+            },
+            {
+                actId: 5,
+                title: "Ato 5: No Supermercado Americano – Corredores, Frios e Autoatendimento (Nível Avançado – Falas #85 a #104)",
+                items: [
+                    [85, "BR", "Excuse me! I'm trying to find <b>maple syrup</b> and pancake mix. Which <b>aisle</b> are they in?", "/ɪkˈskjuːz miː | aɪm ˈtraɪɪŋ tə faɪnd ˈmeɪpl ˈsɪrəp ænd ˈpænkeɪk mɪks | wɪtʃ aɪl ɑːr ðeɪ ɪn/", "(Ecs-quiúz mi! Aim trái-in tu fáind mêi-pôl sí-râp énd pén-quêic mícs. Uítch áil ar dhêi in?)", "Com licença! Estou tentando encontrar calda de ácer (maple) e mistura para panqueca. Em qual corredor eles ficam?", "<strong>Pergunta #1 de Supermercado:</strong> <em>'Which aisle is [produto] in?'</em> (Em qual corredor fica tal coisa?). Lembre-se: <em>aisle = 'áil'</em>!"],
+                    [86, "US", "Breakfast items and syrup are in <b>Aisle 6</b>, on the middle shelf on your right.", "/ˈbrekfəst ˈaɪtəmz ænd ˈsɪrəp ɑːr ɪn aɪl sɪks | ɑːn ðə ˈmɪdl ʃelf ɑːn jɔːr raɪt/", "(Bréc-fast ái-temz énd sí-râp ar in Áil sícs, ón dhu mí-dôl xélf ón iór ráit)", "Itens de café da manhã e caldas ficam no Corredor 6, na prateleira do meio à sua direita.", "<strong>Preposições Espaciais:</strong> <strong>IN</strong> the aisle (no corredor), mas <strong>ON</strong> the shelf (na prateleira)!"],
+                    [87, "BR", "Thank you! And where is the <b>dairy section</b>? I need to buy butter, yogurt, and lactose-free milk.", "/θæŋk juː | ænd wer ɪz ðə ˈderi ˈsekʃn | aɪ niːd tə baɪ ˈbʌtər ˈjoʊɡərt ænd ˈlæktoʊs friː mɪlk/", "(Thénk iu! Énd uér iz dhu dé-ri séc-xãn? Ai níid tu bái bâ-rer, iôu-gârt énd léc-tôus-fríi mílc)", "Obrigado! E onde fica a seção de laticínios? Preciso comprar manteiga, iogurte e leite sem lactose.", "<strong>Vocabulário de Supermercado:</strong> Setor de laticínios chama-se <strong>Dairy section</strong> (não confunda <em>dairy</em> /ˈderi/ com <em>diary</em> /ˈdaɪəri/ - diário!)."],
+                    [88, "US", "The dairy section is along the back wall, right past the <b>produce section</b> with the fresh fruits and vegetables.", "/ðə ˈderi ˈsekʃn ɪz əˈlɔːŋ ðə bæk wɔːl | raɪt pæst ðə ˈproʊduːs ˈsekʃn wɪθ ðə freʃ fruːts ænd ˈvedʒtəblz/", "(Dhu dé-ri séc-xãn iz a-lóng dhu béc uól, ráit pést dhu prôu-dús séc-xãn uídh dhu fréx frúts énd védj-ta-bôlz)", "A seção de laticínios fica ao longo da parede do fundo, logo depois do setor de hortifrúti com as frutas e verduras frescas.", "<strong>🚨 Pronúncia de 'PRODUCE' e 'VEGETABLES':</strong> O setor de hortifrúti chama-se <strong>Produce</strong> (/ˈproʊduːs/ - sílaba forte no PRO). E <strong>vegetables</strong> tem só 3 sílabas: <strong>'VÉDJ-ta-bôlz'</strong>!"],
+                    [89, "BR", "Do I need to weigh the bananas and apples here in the produce section, or do they weigh them at the register?", "/duː aɪ niːd tə weɪ ðə bəˈnænəz ænd ˈæplz hɪr ɪn ðə ˈproʊduːs ˈsekʃn | ɔːr duː ðeɪ weɪ ðem æt ðə ˈredʒɪstər/", "(Du ai níid tu uêi dhu ba-né-naz énd é-pôlz ríher in dhu prôu-dús séc-xãn, ór du dhêi uêi dhém ét dhu ré-djis-ter?)", "Eu preciso pesar as bananas e maçãs aqui no hortifrúti, ou eles pesam lá no caixa?", "<strong>Curiosidade Prática:</strong> Nos supermercados dos EUA, a própria balança do caixa pesa as frutas na hora de passar!"],
+                    [90, "US", "No need to weigh them here! The scanner scale at the checkout counter weighs them automatically by the pound.", "/noʊ niːd tə weɪ ðem hɪr | ðə ˈskænər skeɪl æt ðə ˈtʃekaʊt ˈkaʊntər weɪz ðem ˌɔːtəˈmætɪkli baɪ ðə paʊnd/", "(Nôu níid tu uêi dhém ríher! Dhu ské-ner skêil ét dhu tchéc-áut cáun-ter uêiz dhém ó-to-mé-ti-cli bái dhu páund)", "Não precisa pesá-las aqui! A balança do leitor no balcão do caixa pesa automaticamente por libra.", "<strong>Unidade de Peso nos EUA:</strong> Nos mercados americanos, tudo é vendido por <strong>pound (lb)</strong> = libra (1 pound equivale a cerca de 453 gramas, quase meio quilo)."],
+                    [91, "BR", "Oh, right! Speaking of pounds, I'm here at the <b>deli counter</b>. Could I get half a pound of sliced turkey breast?", "/oʊ raɪt | ˈspiːkɪŋ əv paʊndz aɪm hɪr æt ðə ˈdeli ˈkaʊntər | kʊd aɪ ɡet hæf ə paʊnd əv slaɪst ˈtɜːrki brest/", "(Ôu, ráit! Spíi-quin óv páundz, aim ríher ét dhu dé-li cáun-ter. Cúd ai guét réf a páund óv sláist târ-qui brést?)", "Ah, é verdade! Falando em libras, estou aqui no balcão de frios/padaria. Poderia me vê meia libra (uns 225g) de peito de peru fatiado?", "<strong>Como Pedir Frios nos EUA:</strong> O balcão de frios chama-se <strong>Deli counter</strong>. 'Cerca de 250g' pede-se como <strong>half a pound</strong> (meia libra)!"],
+                    [92, "US", "Sure! How would you like it sliced: thin, medium, or thick?", "/ʃʊr | haʊ wʊd juː laɪk ɪt slaɪst | θɪn ˈmiːdiəm ɔːr θɪk/", "(Xúr! Ráu uúd iu láic it sláist: thín, míi-di-am ór thíc?)", "Claro! Como você gostaria que fosse fatiado: fininho, médio ou grosso?", "<strong>Espessura das Fatias:</strong> <em>Thin / thinly sliced</em> (fatiado fino), <em>medium</em> (médio), <em>thick</em> (grosso)."],
+                    [93, "BR", "<b>Thinly sliced</b>, please, and a quarter pound of Swiss cheese.", "/ˈθɪnli slaɪst pliːz | ænd ə ˈkwɔːrtər paʊnd əv swɪs tʃiːz/", "(Thín-li sláist, plíiz, énd a quór-ter páund óv Suís tchíiz)", "Fatiado fininho, por favor, e um quarto de libra (uns 115g) de queijo suíço.", "<strong>Medida Rápida:</strong> <em>'A quarter pound'</em> = um quarto de libra (aproximadamente 115 gramas)."],
+                    [94, "US", "Here you go! Now, if you have fewer than fifteen items, you can use the <b>self-checkout</b> machines over there.", "/hɪr juː ɡoʊ | naʊ ɪf juː hæv ˈfjuːər ðæn ˌfɪfˈtiːn ˈaɪtəmz | juː kæn juːz ðə self ˈtʃekaʊt məˈʃiːnz ˈoʊvər ðer/", "(Ríher iu gôu! Náu, if iu rév fiú-er dhén fif-tíin ái-temz, iu quén iúz dhu sélf-tchéc-áut ma-xíinz ôu-ver dhér)", "Aqui está! Agora, se você tiver menos de quinze itens, pode usar as máquinas de autoatendimento logo ali.", "<strong>Gramática de Ouro (Fewer vs. Less):</strong> Para coisas contáveis no plural (<em>items</em>), o correto é <strong>fewer than</strong>!"],
+                    [95, "BR", "Excuse me, Megan! The self-checkout screen says 'Unexpected item in the <b>bagging area</b>' and locked up.", "/ɪkˈskjuːz miː ˈmeɡən | ðə self ˈtʃekaʊt skriːn sez ˌʌnɪkˈspektɪd ˈaɪtəm ɪn ðə ˈbæɡɪŋ ˈeriə ænd lɑːkt ʌp/", "(Ecs-quiúz mi, Mé-gan! Dhu sélf-tchéc-áut scríin séz 'Ân-ecs-péc-ted ái-tem in dhu bé-guin é-ri-a' énd lóct âp)", "Com licença, Megan! A tela do autoatendimento diz 'Item inesperado na área de empacotamento' e travou.", "<strong>A Frase Mais Ouvida no Self-Checkout:</strong> Todo caixa automático nos EUA fala <em>'Unexpected item in the bagging area'</em> quando a balança da sacola estranha o peso!"],
+                    [96, "US", "Haha, those scales are super sensitive! Let me swipe my badge to override the error for you.", "/hɑːhɑː ðoʊz skeɪlz ɑːr ˈsuːpər ˈsensətɪv | let miː swaɪp maɪ bædʒ tuː ˌoʊvərˈraɪd ði ˈerər fɔːr juː/", "(Rá-rá, dhôuz skêilz ar sú-per sên-si-tiv! Lét mi suáip mai bédj tu ôu-ver-ráid dhi é-ror fór iu)", "Haha, essas balanças são super sensíveis! Deixe-me passar meu crachá para liberar (destravar) o erro para você.", "<strong>Verbos Técnicos:</strong> <em>'Swipe'</em> = passar o cartão/crachá na fenda; <em>'override'</em> = autorizar/destravar pelo sistema."],
+                    [97, "BR", "Thanks! Also, this cereal box had a tag saying 'Buy one, <b>get one free</b>', but it charged me for both.", "/θæŋks | ˈɔːlsoʊ ðɪs ˈsɪriəl bɑːks hæd ə tæɡ ˈseɪɪŋ baɪ wʌn ɡet wʌn friː | bʌt ɪt tʃɑːrdʒd miː fɔːr boʊθ/", "(Thénks! Óu-sôu, dhis sí-ri-ôl bócs réd a tég sêi-in 'Bái uãn, guét uãn fríi', bât it tchárdjd mi fór bôuth)", "Obrigado! Além disso, esta caixa de cereal tinha uma etiqueta dizendo 'Compre um, leve outro grátis', mas me cobrou pelos dois.", "<strong>Sigla Famosa nos EUA (BOGO):</strong> Nas placas de mercado e lojas, <strong>BOGO</strong> significa <strong>Buy One, Get One (free / 50% off)</strong>!"],
+                    [98, "US", "To get the BOGO deal, you just need to type in a phone number or scan our store club card. Use mine right here!", "/tə ɡet ðə ˈboʊɡoʊ diːl juː dʒʌst niːd tə taɪp ɪn ə foʊn ˈnʌmbər ɔːr skæn ˈaʊər stɔːr klʌb kɑːrd | juːz maɪn raɪt hɪr/", "(Tu guét dhu BÔU-GÔU díil, iu djâst níid tu táip in a fôun nâm-ber ór skén áu-er stór clâb cárd. Iúz máin ráit ríher!)", "Para ganhar a promoção leve 2 pague 1, você só precisa digitar um telefone ou escanear o cartão do clube da loja. Use o meu bem aqui!", "<strong>Dica de Ouro no Mercado:</strong> Se você é turista e não tem cadastro no mercado, peça para o atendente passar o cartão da loja para ativar os descontos!"],
+                    [99, "BR", "Wow, the price dropped by $12 immediately! When I pay with my debit card, the screen asks if I want <b>cashback</b>. What is that?", "/waʊ ðə praɪs drɑːpt baɪ twelv ˈdɑːlərz ɪˈmiːdiətli | wen aɪ peɪ wɪθ maɪ ˈdebɪt kɑːrd ðə skriːn æsks ɪf aɪ wɑːnt ˈkæʃbæk | wʌt ɪz ðæt/", "(Uáu, dhu práis drópt bái tuélv dó-lars i-míi-di-at-li! Uén ai pêi uídh mai dé-bit cárd, dhu scríin éscs if ai uónt quéx-béc. Uót iz dhét?)", "Uau, o preço caiu 12 dólares imediatamente! Quando pago com meu cartão de débito, a tela pergunta se eu quero 'cashback'. O que é isso?", "<strong>Pegadinha nos Mercados dos EUA:</strong> Na maquininha do supermercado, <strong>Cashback ($20, $40)</strong> significa <strong>sacar dinheiro vivo no caixa</strong> debitando da sua conta! Se não quiser sacar, aperte <strong>No Cashback</strong>!"],
+                    [100, "US", "At the supermarket, 'cashback' means withdrawing physical cash from the register! If you don't want cash, just press 'No Thanks'.", "/æt ðə ˈsuːpərmɑːrkɪt ˈkæʃbæk miːnz wɪðˈdrɔːɪŋ ˈfɪzɪkl kæʃ frʌm ðə ˈredʒɪstər | ɪf juː doʊnt wɑːnt kæʃ dʒʌst pres noʊ θæŋks/", "(Ét dhu sú-per-már-quet, 'quéx-béc' míinz uídh-dró-in fí-zi-côl quéx frâm dhu ré-djis-ter! If iu dôunt uónt quéx, djâst prés 'Nôu Thénks')", "No supermercado, 'cashback' significa sacar dinheiro físico direto no caixa! Se você não quiser sacar dinheiro, basta apertar 'Não, obrigado'.", "<strong>Verbo da Aula Extra 5:</strong> Olha o verbo <em>withdraw / withdrawing</em> (sacar dinheiro) aparecendo na explicação!"],
+                    [101, "BR", "Good thing I asked! Otherwise I would have withdrawn $40 without realizing it.", "/ɡʊd θɪŋ aɪ æskt | ˈʌðərwaɪz aɪ wʊd həv wɪðˈdrɔːn ˈfɔːrti ˈdɑːlərz wɪˈðaʊt ˈriːəlaɪzɪŋ ɪt/", "(Gúd thín ai ésct! Ó-dher-uáiz ai uúd rév uídh-drón fór-ti dó-lars uí-dháut rí-a-lái-zin it)", "Ainda bem que eu perguntei! Caso contrário, eu teria sacado 40 dólares sem perceber.", "<strong>🚨 Falso Cognato Clássico:</strong> <strong>Realize</strong> NÃO significa realizar um sonho; significa <strong>perceber / dar-se conta de algo</strong>!"],
+                    [102, "US", "Haha, a lot of tourists press that button by mistake! Do you need help taking your groceries out to the car?", "/hɑːhɑː ə lɑːt əv ˈtʊrɪsts pres ðæt ˈbʌtn baɪ mɪˈsteɪk | duː juː niːd help ˈteɪkɪŋ jɔːr ˈɡroʊsəriz aʊt tə ðə kɑːr/", "(Rá-rá, a lót óv tú-rists prés dhét bâ-tãn bái mis-têic! Du iu níid rélp têi-quin iór grôu-se-riz áut tu dhu cár?)", "Haha, muitos turistas apertam esse botão por engano! Você precisa de ajuda para levar suas compras até o carro?", "<strong>Bloco fixo:</strong> <strong>By mistake</strong> (ou <em>by accident</em>) = por engano / sem querer. E <em>groceries</em> = compras de supermercado."],
+                    [103, "BR", "I'm good, thank you! I'll just push the <b>shopping cart</b> to the parking lot and put it back in the cart corral.", "/aɪm ɡʊd θæŋk juː | aɪl dʒʌst pʊʃ ðə ˈʃɑːpɪŋ kɑːrt tə ðə ˈpɑːrkɪŋ lɑːt ænd pʊt ɪt bæk ɪn ðə kɑːrt kəˈræl/", "(Aim gúd, thénk iu! Áil djâst púx dhu xó-pin cárt tu dhu pár-quin lót énd pút it béc in dhu cárt co-rél)", "Estou tranquilo, obrigado! Vou só empurrar o carrinho de compras até o estacionamento e devolvê-lo no recuo de carrinhos.", "<strong>🚨 Falso Cognato 'PUSH':</strong> Nunca esqueça que <strong>Push</strong> (/pʊʃ/ - 'púx') significa <strong>EMPURRAR</strong>, enquanto <strong>Pull</strong> (/pʊl/ - 'púl') significa <strong>PUXAR</strong>!"],
+                    [104, "US", "You're already shopping like a local, Pedro! Enjoy the rest of your week and see you next time!", "/jʊr ɔːlˈredi ˈʃɑːpɪŋ laɪk ə ˈloʊkl ˈpeɪdroʊ | ɪnˈdʒɔɪ ðə rest əv jɔːr wiːk ænd siː juː nekst taɪm/", "(Iúr óu-ré-di xó-pin láic a lôu-côl, Pêi-drou! En-djói dhu rést óv iór uíic énd síi iu nécst táim!)", "Você já está fazendo compras como um morador local, Pedro! Aproveite o restante da sua semana e até a próxima!", "<strong>Conclusão da Aula:</strong> Com essas 104 frases, você domina cafeterias, restaurantes, lojas de roupas e supermercados no exterior!"]
+                ]
+            }
+        ];
+
+        // ============================================================================
+        // RENDERIZAÇÃO DAS 104 FALAS EM TABELAS ORGANIZADAS POR ATO
+        // ============================================================================
+        const container = document.getElementById('dialogue-container');
+        let htmlOutput = '';
+
+        dialogueActs.forEach(act => {
+            htmlOutput += `
+            <div class="act-block" id="act-${act.actId}">
+                <div class="act-header-bar">
+                    <h2 class="act-title">${act.title}</h2>
+                    <button class="play-act-btn" id="btn-act-${act.actId}" onclick="playEntireAct(${act.actId})">▶ Ouvir Este Ato Inteiro</button>
+                </div>
+                <div class="table-responsive-wrapper">
+                    <table class="dialogue-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 45%;">Interlocutor e Fala em Inglês (Áudio)</th>
+                                <th style="width: 55%;">Pronúncia (IPA + Simplificada), Tradução e Dica do Professor</th>
+                            </tr>
+                        </thead>
+                        <tbody>`;
+
+            act.items.forEach(item => {
+                const num = item[0];
+                const speaker = item[1]; // "BR" ou "US"
+                const enHtml = item[2];
+                const ipa = item[3];
+                const phonetic = item[4];
+                const pt = item[5];
+                const tip = item[6];
+
+                const isBr = speaker === "BR";
+                const rowClass = isBr ? "row-br" : "row-us";
+                const badgeClass = isBr ? "speaker-br" : "speaker-us";
+                const speakerName = isBr ? "🇧🇷 Pedro (Cliente Brasileiro)" : "🇺🇸 Megan (Cafeteria / Restaurante / Loja)";
+                const pitchVal = isBr ? 0.93 : 1.07;
+
+                const cleanAudioText = enHtml.replace(/<\/?b>/g, '').replace(/'/g, "\\'");
+
+                htmlOutput += `
+                            <tr class="dialogue-row ${rowClass}" data-search="${enHtml.toLowerCase()} ${pt.toLowerCase()} ${tip.toLowerCase()} ${act.title.toLowerCase()}">
+                                <td>
+                                    <div>
+                                        <span class="turn-num">#${num}</span>
+                                        <span class="speaker-tag ${badgeClass}">${speakerName}</span>
+                                    </div>
+                                    <span class="sentence-en">${enHtml}</span>
+                                    <button class="audio-btn-inline" onclick="playAudio('${cleanAudioText}', ${pitchVal})" title="Ouvir fala #${num}">🔊</button>
+                                </td>
+                                <td>
+                                    <span class="ipa-symbol">${ipa}</span>
+                                    <span class="character-portuguese-phonetics">${phonetic}</span>
+                                    <span class="details-translation">${pt}</span>
+                                    <span class="teacher-tip">💡 ${tip}</span>
+                                </td>
+                            </tr>`;
+            });
+
+            htmlOutput += `
+                        </tbody>
+                    </table>
+                </div>
+            </div>`;
+        });
+
+        container.innerHTML = htmlOutput;
+
+        // ============================================================================
+        // FILTRO DE PESQUISA EM TEMPO REAL NAS 104 FALAS
+        // ============================================================================
+        function filterDialogue() {
+            const query = document.getElementById('dialogueSearch').value.toLowerCase();
+            const actBlocks = document.querySelectorAll('.act-block');
+
+            actBlocks.forEach(block => {
+                const rows = block.querySelectorAll('.dialogue-row');
+                let visibleRows = 0;
+
+                rows.forEach(row => {
+                    const text = row.getAttribute('data-search');
+                    if (text.includes(query)) {
+                        row.style.display = '';
+                        visibleRows++;
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+
+                block.style.display = visibleRows > 0 ? 'block' : 'none';
+            });
+        }
+
+        // ============================================================================
+        // SINTETIZADOR DE VOZ (INDIVIDUAL E SEQUENCIAL POR ATO)
+        // ============================================================================
+        let voices = [];
+        let isPlayingSequence = false;
+        let currentActPlaying = null;
+
+        function loadVoices() { voices = window.speechSynthesis.getVoices(); }
+        loadVoices();
+        if (window.speechSynthesis.onvoiceschanged !== undefined) {
+            window.speechSynthesis.onvoiceschanged = loadVoices;
+        }
+
+        function getBestEnglishVoice() {
+            if (voices.length === 0) loadVoices();
+            let targetVoice = voices.find(voice => 
+                (voice.name.includes('Google') || voice.name.includes('Premium') || voice.name.includes('Samantha')) 
+                && voice.lang.includes('en-US')
+            );
+            if (!targetVoice) targetVoice = voices.find(voice => voice.lang === 'en-US');
+            if (!targetVoice) targetVoice = voices.find(voice => voice.lang.startsWith('en'));
+            return targetVoice;
+        }
+
+        function playAudio(text, pitch = 1) {
+            stopSequence();
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.rate = 0.86;
+                utterance.pitch = pitch;
+
+                const targetVoice = getBestEnglishVoice();
+                if (targetVoice) {
+                    utterance.voice = targetVoice;
+                    utterance.lang = targetVoice.lang;
+                } else {
+                    utterance.lang = 'en-US';
+                }
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
+        function stopSequence() {
+            isPlayingSequence = false;
+            if (currentActPlaying !== null) {
+                const btn = document.getElementById(`btn-act-${currentActPlaying}`);
+                if (btn) {
+                    btn.textContent = "▶ Ouvir Este Ato Inteiro";
+                    btn.classList.remove('stop');
+                }
+                currentActPlaying = null;
+            }
+        }
+
+        function playEntireAct(actId) {
+            if (isPlayingSequence && currentActPlaying === actId) {
+                window.speechSynthesis.cancel();
+                stopSequence();
+                return;
+            }
+
+            window.speechSynthesis.cancel();
+            stopSequence();
+
+            const actObj = dialogueActs.find(a => a.actId === actId);
+            if (!actObj) return;
+
+            isPlayingSequence = true;
+            currentActPlaying = actId;
+            const btn = document.getElementById(`btn-act-${actId}`);
+            if (btn) {
+                btn.textContent = "⏹ Parar Áudio do Ato";
+                btn.classList.add('stop');
+            }
+
+            let index = 0;
+            function speakNext() {
+                if (!isPlayingSequence || index >= actObj.items.length) {
+                    stopSequence();
+                    return;
+                }
+                const item = actObj.items[index];
+                const isBr = item[1] === "BR";
+                const cleanText = item[2].replace(/<\/?b>/g, '');
+                const utterance = new SpeechSynthesisUtterance(cleanText);
+                utterance.rate = 0.86;
+                utterance.pitch = isBr ? 0.93 : 1.07;
+
+                const targetVoice = getBestEnglishVoice();
+                if (targetVoice) {
+                    utterance.voice = targetVoice;
+                    utterance.lang = targetVoice.lang;
+                } else {
+                    utterance.lang = 'en-US';
+                }
+
+                utterance.onend = () => {
+                    index++;
+                    if (isPlayingSequence) {
+                        setTimeout(speakNext, 450);
+                    }
+                };
+
+                window.speechSynthesis.speak(utterance);
+            }
+
+            speakNext();
+        }
+    </script>
+</body>
+</html>
